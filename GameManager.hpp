@@ -9,12 +9,12 @@ using namespace std;
 class GameManager
 {
 private:
-    list<Observer> observers;    
+    list<Observer*> observers;    
 
 public:
-    void addObserver();
-    void removeObserver();
-    void notifyObservers();
+    void addPlayer(Observer* observer);
+    void removePlayer();
+    void notifyAllPlayer();
 
 };
 

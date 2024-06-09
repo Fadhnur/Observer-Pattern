@@ -1,13 +1,20 @@
 #include "GameManager.hpp"
 
-void GameManager :: addObserver(){
-
+void GameManager :: addPlayer(Observer* observer){
+    //Menggunakan library list dengan menambahkan observer pada bagian belakang/terakhir list
+    observers.push_back(observer);
 }
 
-void GameManager :: removeObserver(){
-
+void GameManager :: removePlayer(){
+    //Menggunakan library list dengan menghapus observer pada bagian belakang/terakhir list
+    observers.pop_back();
 }
 
-void GameManager :: notifyObservers(){
-
+void GameManager :: notifyAllPlayer(){
+    //Melakukan looping untuk mengupdate observer sebanyak observer yang dimiliki
+    for (Observer* observer : observers)
+    {
+        observer->update();
+    }
+    
 }
